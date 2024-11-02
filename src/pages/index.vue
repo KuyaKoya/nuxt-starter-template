@@ -30,7 +30,7 @@ const { increment } = useCounterStore()
 const { count, doubleCount } = storeToRefs(useCounterStore())
 
 // sample api call
-const { data } = await useFetch('/api/get-employee-details', {
+const { data } = await useFetch('/api/users', {
   method: 'GET',
 })
 console.log(data.value)
