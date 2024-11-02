@@ -1,22 +1,33 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Aura from '@primevue/themes/aura';
+import Aura from '@primevue/themes/aura'
 
 export default defineNuxtConfig({
-  srcDir: './src',
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
+    '@primevue/nuxt-module',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'storeToRefs'],
+      },
+    ],
+  ],
   imports: {
     dirs: ['./composables/**', './store/**', './utils'],
   },
+  devtools: { enabled: true },
+  css: ['primeicons/primeicons.css'],
+  srcDir: './src',
   build: {
     transpile: ['primevue'],
   },
-  css: ['primeicons/primeicons.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@primevue/nuxt-module', '@pinia/nuxt'],
-  devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
   eslint: {
     config: {
       stylistic: {
         commaDangle: 'only-multiline',
+        semi: false,
       },
     },
   },
@@ -39,4 +50,4 @@ export default defineNuxtConfig({
       },
     },
   },
-});
+})
