@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     transpile: ['primevue'],
   },
   css: ['primeicons/primeicons.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@primevue/nuxt-module'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@primevue/nuxt-module', '@pinia/nuxt'],
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
   eslint: {
