@@ -28,4 +28,10 @@ import { useCounterStore } from '../stores/use-counter-store'
 
 const { increment } = useCounterStore()
 const { count, doubleCount } = storeToRefs(useCounterStore())
+
+// sample api call
+const { data } = await useFetch('/api/get-employee-details', {
+  method: 'GET',
+})
+console.log(data.value)
 </script>
