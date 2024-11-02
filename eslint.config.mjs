@@ -1,8 +1,13 @@
 // @ts-check
+import typescriptParser from '@typescript-eslint/parser'
+import vueESLintParser from 'vue-eslint-parser'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
   {
+    languageOptions: {
+      parser: typescriptParser,
+    },
     rules: {
       'vue/multi-word-component-names': 'off',
       'vue/no-multiple-template-roots': 'off',
@@ -24,6 +29,13 @@ export default withNuxt(
       'no-unused-vars': 'off',
       'no-undef': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
+      '@stylistic/operator-linebreak': 'off',
+    },
+  },
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueESLintParser,
     },
   },
   {
