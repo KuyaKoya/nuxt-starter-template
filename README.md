@@ -1,75 +1,44 @@
-# Nuxt Minimal Starter
+# Nuxt Starter Template
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a starter template for Nuxt 3 projects, it comes with the following features:
 
-## Setup
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for styling your application.
+- [ESLint](https://eslint.org/) - A linter for your code to ensure best practices and catch errors.
+- [Prettier](https://prettier.io/) - A code formatter to keep your code clean and consistent.
+- [PrimeVue](https://www.primevue.org/) - A UI component library for Vue 3.
+- [PrimeIcons](https://www.primefaces.org/primeicons/) - A icon library for PrimeVue.
+- [Pinia Stores](https://pinia.vuejs.org/) - A state management library for Vue 3.
+- [Prisma](https://www.prisma.io/) - A ORM for interacting with your database.
+- [Kysely](https://kysely.org/) - A type-safe database query builder.
+- [Docker-compose](https://docs.docker.com/compose/) - A tool for running multiple docker containers.
 
-Make sure to install dependencies:
+This project is run using [pnpm](https://pnpm.io/) and requires Node.js version 20.15.1.
 
-```bash
-# npm
-npm install
+## Getting Started
 
-# pnpm
-pnpm install
+1. Clone the repository
+2. Install dependencies with `pnpm install`
+3. Run the development server with `pnpm dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-# yarn
-yarn install
+## Docker
 
-# bun
-bun install
-```
+1. Build the docker image with `docker-compose build`
+2. Run the docker container with `docker-compose up`
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Development Server
+## Linting and Formatting
 
-Start the development server on `http://localhost:3000`:
+This project uses ESLint and Prettier to ensure code quality and consistency.
 
-```bash
-# npm
-npm run dev
+1. Run `pnpm lint` to check for errors.
+2. Run `pnpm format` to format your code.
 
-# pnpm
-pnpm dev
+## Prisma
 
-# yarn
-yarn dev
+This project uses Prisma as its ORM. To use Prisma you need to create a `.env` file with the following variables:
 
-# bun
-bun run dev
-```
+- `DATABASE_URL` - The URL of your database.
+- `PRISMA_CLIENT_ENGINE_TYPE` - The type of database you are using.
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+You can then run `npx prisma migrate dev` to create the database schema.
