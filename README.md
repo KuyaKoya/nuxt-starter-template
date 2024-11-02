@@ -1,6 +1,9 @@
 # Nuxt Starter Template
 
-This is a starter template for Nuxt 3 projects, it comes with the following features:
+This is a starter template for Nuxt 3 projects with a sample server-side code added for you.
+This template follows clean architecture pattern.
+
+It comes with the following packages installed:
 
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for styling your application.
 - [ESLint](https://eslint.org/) - A linter for your code to ensure best practices and catch errors.
@@ -33,7 +36,6 @@ This project is run using [pnpm](https://pnpm.io/) and requires Node.js version 
 This project uses ESLint and Prettier to ensure code quality and consistency.
 
 1. Run `pnpm lint` to check for errors.
-2. Run `pnpm format` to format your code.
 
 ## Prisma
 
@@ -41,4 +43,10 @@ This project uses Prisma as its ORM with PostgreSQL as the database. To use Pris
 
 - `POSTGRES_CONNECTION_URL` - The URL of your PostgreSQL database. Example: `DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"`
 
-You can then run `npx prisma migrate dev` to create the database schema.
+### Migration
+
+run `npx prisma migrate dev` to create the database schema.
+
+### Seeding
+
+run `npx prisma db seed` to seed the database.
