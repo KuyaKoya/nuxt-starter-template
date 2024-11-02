@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useCounterStore } from '../stores/use-counter-store'
 
 const { increment } = useCounterStore()
