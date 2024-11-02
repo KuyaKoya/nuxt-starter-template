@@ -1,10 +1,5 @@
 <template>
   <div class="flex flex-col gap-4">
-    <Avatar
-      label="T"
-      class="mr-2"
-      size="xlarge"
-    />
     <div class="flex flex-row items-center gap-2">
       <Button
         label="Increment and double"
@@ -20,6 +15,20 @@
       />
       Home
     </div>
+    <div class="flex flex-col gap-3">
+      <div
+        v-for="user in data"
+        :key="user.id"
+      >
+        <Avatar
+          :label="user.name?.slice(0, 2) ?? 'A'"
+          class="mr-2"
+          size="xlarge"
+          shape="circle"
+        />
+        {{ user.name }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,5 +42,4 @@ const { count, doubleCount } = storeToRefs(useCounterStore())
 const { data } = await useFetch('/api/users', {
   method: 'GET',
 })
-console.log(data.value)
 </script>
