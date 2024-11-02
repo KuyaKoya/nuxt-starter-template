@@ -1,30 +1,31 @@
 <template>
   <div class="flex flex-col gap-4">
     <Avatar
-      label="P"
+      label="T"
       class="mr-2"
       size="xlarge"
     />
-    <Button
-      label="Login"
-      class="p-button-outlined w-fit"
-      @click="increment"
-    />
-    <Button
-      icon="pi pi-home"
-      aria-label="Save"
-    />
-    <div>{{ count }} {{ doubleCount }}</div>
+    <div class="flex flex-row items-center gap-2">
+      <Button
+        label="Increment and double"
+        class="p-button-outlined w-fit"
+        @click="increment"
+      />
+      <div>{{ count }} {{ doubleCount }}</div>
+    </div>
+    <div class="flex flex-row items-center gap-3">
+      <Button
+        icon="pi pi-home"
+        aria-label="Save"
+      />
+      Home
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import { useCounterStore } from '../stores/use-counter-store'
 
-const { count, doubleCount, increment } = useCounterStore()
-
-const st5 = 'hello'
-if (st5 === 'hello') {
-  console.log('hello')
-}
+const { increment } = useCounterStore()
+const { count, doubleCount } = storeToRefs(useCounterStore())
 </script>
