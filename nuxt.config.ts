@@ -22,21 +22,16 @@ const runtimeConfig: NuxtConfig['runtimeConfig'] = {
 }
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/eslint',
-    '@primevue/nuxt-module',
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: ['defineStore', 'storeToRefs'],
-      },
-    ],
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@primevue/nuxt-module', '@pinia/nuxt'],
   imports: {
     dirs: ['./composables/**', './store/**', './utils'],
   },
   devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'NUXT TEMPLATE',
+    },
+  },
   css: ['primeicons/primeicons.css'],
   runtimeConfig,
   srcDir: './src',
